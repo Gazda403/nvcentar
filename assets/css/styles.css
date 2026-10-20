@@ -1,0 +1,226 @@
+/* ==========================================================================
+   NV CENTAR - IMPECCABLE ARCHITECTURAL LIGHT DESIGN SYSTEM
+   Bojan Kiklić s.p. Banja Luka | JIB: 4511926210008
+   Aesthetic: Soft Structuralism / Swiss Architectural Precision / White Canvas
+   ========================================================================== */
+
+:root {
+  --color-canvas-pure: #FFFFFF;
+  --color-canvas-subtle: #F8FAFC;
+  --color-canvas-muted: #F1F5F9;
+  --color-border-subtle: #E2E8F0;
+  --color-border-medium: #CBD5E1;
+  --color-border-dark: #94A3B8;
+  --color-ink-primary: #090D16;
+  --color-ink-secondary: #334155;
+  --color-ink-muted: #64748B;
+  --color-brand-red: #B00615;
+  --color-brand-red-dark: #8F0511;
+  --color-brand-red-light: #DC2626;
+  --color-amber-primary: #B00615;
+  --color-amber-dark: #8F0511;
+  --color-orange-deep: #B00615;
+  --font-heading: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-fluid: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #FFFFFF;
+  color: #090D16;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #090D16;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+.font-heading {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+
+/* Light Architectural Drafting Grids */
+.bg-light-drafting-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
+}
+
+.bg-light-drafting-dense {
+  background-size: 16px 16px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+}
+
+/* Hazard Stripe Accents */
+.hazard-stripe-light {
+  background: repeating-linear-gradient(
+    -45deg,
+    #B00615,
+    #B00615 10px,
+    #090D16 10px,
+    #090D16 20px
+  );
+}
+
+.hazard-stripe-subtle {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(176, 6, 21, 0.2),
+    rgba(176, 6, 21, 0.2) 8px,
+    rgba(241, 245, 249, 0.9) 8px,
+    rgba(241, 245, 249, 0.9) 16px
+  );
+}
+
+/* Architectural Crosshair Corners */
+.crosshair-corner {
+  position: relative;
+}
+.crosshair-corner::before,
+.crosshair-corner::after {
+  content: '+';
+  position: absolute;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1;
+  color: #94A3B8;
+  opacity: 0.6;
+}
+.crosshair-corner::before {
+  top: 8px;
+  left: 8px;
+}
+.crosshair-corner::after {
+  bottom: 8px;
+  right: 8px;
+}
+
+/* Double-Bezel Hardware Architecture (Doppelrand) */
+.double-bezel-outer {
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  border-radius: 1.5rem;
+  padding: 0.5rem;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+  transition: transform 0.28s var(--ease-spring), 
+              box-shadow 0.28s var(--ease-spring),
+              border-color 0.28s ease;
+}
+
+.double-bezel-outer:hover {
+  transform: translateY(-3px);
+  border-color: #B00615;
+  box-shadow: 0 20px 40px -10px rgba(176, 6, 21, 0.12);
+}
+
+.double-bezel-inner {
+  background: #FFFFFF;
+  border-radius: calc(1.5rem - 0.5rem);
+  border: 1px solid rgba(226, 232, 240, 0.7);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* Material Image Card Zoom */
+.catalog-card .img-zoom {
+  transition: transform 0.5s var(--ease-spring);
+}
+.catalog-card:hover .img-zoom {
+  transform: scale(1.06);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border: 2px solid #F8FAFC;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B00615;
+}
+
+/* Glowing Red Glow Effect */
+.glow-amber-light,
+.glow-red-light {
+  box-shadow: 0 8px 30px -4px rgba(176, 6, 21, 0.32);
+}
+
+/* Ring Pulse Animation */
+@keyframes ring-pulse-light {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(176, 6, 21, 0.5);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(176, 6, 21, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(176, 6, 21, 0);
+  }
+}
+.animate-ring-pulse-light {
+  animation: ring-pulse-light 2s infinite;
+}
+
+/* Toast Container */
+#toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+.toast-msg {
+  pointer-events: auto;
+  animation: toastSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes toastSlideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Leaflet Map Custom Styling for Light Theme */
+.leaflet-container {
+  background-color: #F8FAFC !important;
+  font-family: 'Inter', sans-serif !important;
+}
+.leaflet-popup-content-wrapper {
+  background: #FFFFFF !important;
+  color: #090D16 !important;
+  border-radius: 8px !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 15px 35px -5px rgba(15, 23, 42, 0.12) !important;
+}
+.leaflet-popup-tip {
+  background: #FFFFFF !important;
+}
